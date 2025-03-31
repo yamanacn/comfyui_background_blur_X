@@ -28,11 +28,7 @@
    cd ComfyUI/custom_nodes/
    git clone https://github.com/yourusername/comfyui-background-blur-X.git
    ```
-3. 安装依赖：
-   ```
-   pip install opencv-python numpy torch
-   ```
-4. 重启ComfyUI
+3. 依赖在requirements.txt中查看
 
 ## 使用方法
 
