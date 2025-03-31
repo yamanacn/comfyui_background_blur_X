@@ -1,0 +1,517 @@
+{
+  "last_node_id": 28,
+  "last_link_id": 46,
+  "nodes": [
+    {
+      "id": 23,
+      "type": "LayerMask: PersonMaskUltra V2",
+      "pos": [
+        1260,
+        2660
+      ],
+      "size": [
+        365.4000244140625,
+        414
+      ],
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "localized_name": "图像",
+          "label": "图像",
+          "type": "IMAGE",
+          "link": 30
+        }
+      ],
+      "outputs": [
+        {
+          "name": "image",
+          "localized_name": "image",
+          "label": "图像",
+          "type": "IMAGE",
+          "links": null
+        },
+        {
+          "name": "mask",
+          "localized_name": "mask",
+          "label": "遮罩",
+          "type": "MASK",
+          "links": [
+            37
+          ],
+          "slot_index": 1
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui_layerstyle_advance",
+        "ver": "89aadaa6c0b8c9adfab86f5d0196f1d13383d47c",
+        "Node name for S&R": "LayerMask: PersonMaskUltra V2"
+      },
+      "widgets_values": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        true,
+        0.4,
+        "VITMatte",
+        6,
+        6,
+        0.01,
+        0.99,
+        true,
+        "cuda",
+        2
+      ],
+      "color": "rgba(27, 80, 119, 0.7)"
+    },
+    {
+      "id": 27,
+      "type": "MaskBlur+",
+      "pos": [
+        1300,
+        2510
+      ],
+      "size": [
+        315,
+        82
+      ],
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "mask",
+          "localized_name": "mask",
+          "label": "遮罩",
+          "type": "MASK",
+          "link": 37
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MASK",
+          "localized_name": "遮罩",
+          "label": "遮罩",
+          "type": "MASK",
+          "links": [
+            38
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui_essentials",
+        "ver": "33ff89fd354d8ec3ab6affb605a79a931b445d99",
+        "Node name for S&R": "MaskBlur+"
+      },
+      "widgets_values": [
+        30,
+        "auto"
+      ]
+    },
+    {
+      "id": 24,
+      "type": "InvertMask",
+      "pos": [
+        1350,
+        2440
+      ],
+      "size": [
+        210,
+        26
+      ],
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "mask",
+          "localized_name": "遮罩",
+          "label": "遮罩",
+          "type": "MASK",
+          "link": 38
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MASK",
+          "localized_name": "遮罩",
+          "label": "遮罩",
+          "type": "MASK",
+          "links": [
+            45
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.26",
+        "Node name for S&R": "InvertMask"
+      },
+      "widgets_values": []
+    },
+    {
+      "id": 28,
+      "type": "DepthBackgroundBlur",
+      "pos": [
+        1640,
+        2080
+      ],
+      "size": [
+        315,
+        314
+      ],
+      "flags": {},
+      "order": 7,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "localized_name": "image",
+          "label": "image",
+          "type": "IMAGE",
+          "link": 43
+        },
+        {
+          "name": "depth_map",
+          "localized_name": "depth_map",
+          "label": "depth_map",
+          "type": "IMAGE",
+          "link": 44
+        },
+        {
+          "name": "mask",
+          "localized_name": "mask",
+          "label": "mask",
+          "type": "MASK",
+          "shape": 7,
+          "link": 45
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "localized_name": "图像",
+          "label": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            46
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "DepthBackgroundBlur"
+      },
+      "widgets_values": [
+        100,
+        "棱镜模糊",
+        0.3,
+        0.2,
+        1,
+        0,
+        0.5,
+        0.5,
+        1,
+        1
+      ]
+    },
+    {
+      "id": 16,
+      "type": "PreviewImage",
+      "pos": [
+        1670,
+        2470
+      ],
+      "size": [
+        210,
+        246
+      ],
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "localized_name": "图像",
+          "label": "图像",
+          "type": "IMAGE",
+          "link": 17
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.26",
+        "Node name for S&R": "PreviewImage"
+      },
+      "widgets_values": []
+    },
+    {
+      "id": 12,
+      "type": "DepthAnything_V2",
+      "pos": [
+        1880,
+        2470
+      ],
+      "size": [
+        210,
+        46
+      ],
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "da_model",
+          "localized_name": "da_model",
+          "label": "da_model",
+          "type": "DAMODEL",
+          "link": 10
+        },
+        {
+          "name": "images",
+          "localized_name": "图像",
+          "label": "images",
+          "type": "IMAGE",
+          "link": 29
+        }
+      ],
+      "outputs": [
+        {
+          "name": "image",
+          "localized_name": "image",
+          "label": "image",
+          "type": "IMAGE",
+          "links": [
+            17,
+            44
+          ],
+          "slot_index": 0
+        }
+      ],
+      "title": "DepthAnything_V2",
+      "properties": {
+        "cnr_id": "comfyui-depthanythingv2",
+        "ver": "9d7cb8c1e53b01744a75b599d3e91c93464a2d33",
+        "Node name for S&R": "DepthAnything_V2"
+      },
+      "widgets_values": []
+    },
+    {
+      "id": 13,
+      "type": "DownloadAndLoadDepthAnythingV2Model",
+      "pos": [
+        1660,
+        2790
+      ],
+      "size": [
+        441,
+        58
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "da_v2_model",
+          "localized_name": "da_v2_model",
+          "label": "da_v2_model",
+          "type": "DAMODEL",
+          "links": [
+            10
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui-depthanythingv2",
+        "ver": "9d7cb8c1e53b01744a75b599d3e91c93464a2d33",
+        "Node name for S&R": "DownloadAndLoadDepthAnythingV2Model"
+      },
+      "widgets_values": [
+        "depth_anything_v2_vitl_fp32.safetensors"
+      ]
+    },
+    {
+      "id": 10,
+      "type": "LoadImage",
+      "pos": [
+        2740,
+        2050
+      ],
+      "size": [
+        510,
+        780
+      ],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "localized_name": "图像",
+          "label": "图像",
+          "type": "IMAGE",
+          "links": [
+            29,
+            30,
+            43
+          ],
+          "slot_index": 0
+        },
+        {
+          "name": "MASK",
+          "localized_name": "遮罩",
+          "label": "遮罩",
+          "type": "MASK",
+          "links": null
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.26",
+        "Node name for S&R": "LoadImage"
+      },
+      "widgets_values": [
+        "christina_lionscat_1736541261_3542687333678792528_48419005.jpg",
+        "image"
+      ]
+    },
+    {
+      "id": 14,
+      "type": "PreviewImage",
+      "pos": [
+        2120,
+        2040
+      ],
+      "size": [
+        580,
+        790
+      ],
+      "flags": {},
+      "order": 8,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "localized_name": "图像",
+          "label": "图像",
+          "type": "IMAGE",
+          "link": 46
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.26",
+        "Node name for S&R": "PreviewImage"
+      },
+      "widgets_values": []
+    }
+  ],
+  "links": [
+    [
+      10,
+      13,
+      0,
+      12,
+      0,
+      "DAMODEL"
+    ],
+    [
+      17,
+      12,
+      0,
+      16,
+      0,
+      "IMAGE"
+    ],
+    [
+      29,
+      10,
+      0,
+      12,
+      1,
+      "IMAGE"
+    ],
+    [
+      30,
+      10,
+      0,
+      23,
+      0,
+      "IMAGE"
+    ],
+    [
+      37,
+      23,
+      1,
+      27,
+      0,
+      "MASK"
+    ],
+    [
+      38,
+      27,
+      0,
+      24,
+      0,
+      "MASK"
+    ],
+    [
+      43,
+      10,
+      0,
+      28,
+      0,
+      "IMAGE"
+    ],
+    [
+      44,
+      12,
+      0,
+      28,
+      1,
+      "IMAGE"
+    ],
+    [
+      45,
+      24,
+      0,
+      28,
+      2,
+      "MASK"
+    ],
+    [
+      46,
+      28,
+      0,
+      14,
+      0,
+      "IMAGE"
+    ]
+  ],
+  "groups": [],
+  "config": {},
+  "extra": {
+    "ds": {
+      "scale": 0.658845000000001,
+      "offset": [
+        -1152.5474947789314,
+        -1878.0245008729396
+      ]
+    },
+    "ue_links": [],
+    "workspace_info": {
+      "id": "vfL6RGACUF46qlSijvz37"
+    }
+  },
+  "version": 0.4
+}

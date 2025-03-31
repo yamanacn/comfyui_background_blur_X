@@ -1,0 +1,78 @@
+{
+  "DepthBackgroundBlur": {
+    "display_name": "深度感知背景虚化",
+    "inputs": {
+      "image": {
+        "name": "图像"
+      },
+      "depth_map": {
+        "name": "深度图"
+      },
+      "blur_strength": {
+        "name": "模糊强度"
+      },
+      "blur_style": {
+        "name": "模糊风格"
+      },
+      "foreground_threshold": {
+        "name": "前景阈值"
+      },
+      "transition_smoothness": {
+        "name": "过渡平滑度"
+      },
+      "mask_strength": {
+        "name": "遮罩强度"
+      },
+      "effect_angle": {
+        "name": "效果角度"
+      },
+      "effect_center_x": {
+        "name": "效果中心X"
+      },
+      "effect_center_y": {
+        "name": "效果中心Y"
+      },
+      "effect_gradient": {
+        "name": "效果渐变"
+      },
+      "effect_intensity": {
+        "name": "效果强度"
+      },
+      "mask": {
+        "name": "遮罩"
+      },
+      "comfy_image": {
+        "name": "Comfy图像"
+      },
+      "comfy_depth": {
+        "name": "Comfy深度"
+      },
+      "threshold": {
+        "name": "阈值"
+      },
+      "smoothness": {
+        "name": "平滑度"
+      },
+      "user_mask": {
+        "name": "用户遮罩"
+      },
+      "target_shape": {
+        "name": "目标形状"
+      },
+      "original": {
+        "name": "原始"
+      },
+      "blurred": {
+        "name": "模糊"
+      },
+      "cv_image": {
+        "name": "CV图像"
+      }
+    },
+    "outputs": {
+      "image": {
+        "name": "图像"
+      }
+    }
+  }
+}
